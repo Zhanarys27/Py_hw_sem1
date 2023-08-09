@@ -1,16 +1,15 @@
-#TASK 1
+# TASK 1
 # n = 125
 # res = (n%10)+((n%100)//10)+(n//100)
 # print(res)
 
-#TASK2
+# TASK2
 # n = 24
 # s = n//3
 # print(s//2, s*2, s//2)
 
 
-
-#TASK 3
+# TASK 3
 # n = 123341
 # levaya = n//1000
 # pravaya = n%1000
@@ -22,7 +21,7 @@
 # else:
 #     print("no")
 
-#TASK 4
+# TASK 4
 # a, b, c = 3,5,13
 # res = (a*b)
 # if res>= c and (res%c) !=0:
@@ -31,7 +30,6 @@
 #     print("yes")
 # else:
 #     print("no")
-
 
 
 # leksia 2
@@ -264,3 +262,207 @@ from random import randint
 
 # def print_add (n):
 #     if ()
+
+
+# lektion
+# def sum_str(*args):
+#     res = ''
+#     for i in args:
+#         res +=i
+#     return res
+#
+# print(sum_str('1','v', 'ew', 'ter' ))
+
+
+# vozvedenie v stepen
+
+# def f(a,b):
+#     if b == 1:
+#         return a
+#     else:
+#         return a*f(a, b-1)
+#
+# a, b = int(input()), int(input())
+# print(f(a, b))
+
+# def sum(a,b):
+#     if b ==1:
+#         return a
+#     else:
+#         return a+sum(a,b-1)
+# a = 2
+# b = 2
+# print(sum(a, b))
+#
+# def sum(n):
+#     if n<1:
+#         return ''
+#     i = input()
+#     return sum(n-1)+' '+i
+# n = int(input())
+# print(sum(n))
+
+
+# list_1 = [1,2,3,4,5,7,8,44, 38]
+# for i in list_1:
+#     if i %2==0:
+#         print(lambda: i*i, i)
+
+
+# def calc2(x):
+#     return x * 10
+#
+#
+# def math(op, x):
+#     print(op, x)
+#
+#
+# math(calc2, 10)  # 100
+
+# list_1 = [x for x in range(1,20)]
+# print(list_1)
+# list_1= list(map(lambda x: x+10, list_1))
+# print(list_1)
+
+
+
+# У вас есть код, который вы не можете менять(так часто бывает, когда код в глубине программы используется множество раз и вы не хотите ничего сломать):
+#
+# transformation = <???>
+#
+# values = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29] # или любой другой список
+#
+# transormed_values = list(map(transformation, values))
+#
+# Единственный способ вашего взаимодействия с этим кодом - посредством задания функции transformation.
+#
+# Однако вы поняли, что для вашей текущей задачи вам не нужно никак преобразовывать список значений, а нужно получить его как есть.
+#
+# Напишите такое лямбда-выражение transformation, чтобы transformed_values получился копией values.
+#
+
+
+# Планеты вращаются вокруг звезд по эллиптическим орбитам. Назовем самой далекой планетой ту,
+# орбита которой имеет самую большую площадь. Напишите функцию find_farthest_orbit(list_of_orbits),
+# которая среди списка орбит планет найдет ту, по которой вращается самая далекая планета. Круговые орбиты
+# не учитывайте: вы знаете, что у вашей звезды таких планет нет, зато искусственные спутники были были запущены
+# на круговые орбиты. Результатом функции должен быть кортеж, содержащий длины полуосей эллипса орбиты самой далекой
+# планеты. Каждая орбита представляет из себя кортеж из пары чисел - полуосей ее эллипса. Площадь эллипса вычисляется
+# по формуле S = piab, где a и b - длины полуосей эллипса. При решении задачи используйте списочные выражения. Подсказка:
+# проще всего будет найти эллипс в два шага: сначала вычислить самую большую площадь эллипса, а затем найти и сам
+#  эллипс, имеющий такую площадь. Гарантируется, что самая далекая планета ровно одна
+
+# import math
+# from random import randint
+#
+# lst = [(randint(1, 10), randint(1, 10)) for i in range(5)]
+#
+#
+# def find_farthest_orbit(list_of_orbits):
+#     list_res = []
+#     for i,j in list_of_orbits:
+#         if i != j:
+#             S = math.pi * i * j
+#             list_res.append(S)
+#     max_s = max(list_res)
+#
+#     res = list_of_orbits[list_res.index(max_s)]
+#     print(list_res)
+#     return res
+#
+# print(lst)
+# print(find_farthest_orbit(lst))
+#
+# import random
+#
+# print(planets := [(random.randint(1,10), random.randint(1, 10)) for _ in range(10)])
+#
+# planets = list(filter(lambda x: x[0] != x[1], planets))
+# print(planets)
+#
+# print(max(planets, key = lambda x: x[0]*x[1]))
+
+
+# Даны два массива чисел. Требуется вывести те элементы первого массива
+# (в том порядке, в каком они идут в первом массиве), которых нет во втором массиве.
+# Пользователь вводит число N - количество элементов в первом массиве, затем N чисел -
+# элементы массива. Затем число M - количество элементов во втором массиве. Затем элементы второго массива
+from random import randint
+
+
+# def sort(list_1, list_2):
+#     res_list = []
+#     for i in list_1:
+#         if i not in list_2:
+#             res_list.append(i)
+#     return res_list
+#
+# n = int(input())
+# list_1 = [randint(1, 10) for item in range(1, n+1)]
+# m = int(input())
+# list_2 = [randint(1, 10) for item in range(1, m+1)]
+# print(list_1)
+# print(list_2)
+# print(sort(list_1, list_2))
+
+# Дан массив, состоящий из целых чисел. Напишите программу, которая в данном массиве
+# определит количество элементов, у которых два соседних и, при этом, оба соседних
+# элемента меньше данного. Сначала вводится число N — количество элементов в массиве
+# Далее записаны N чисел — элементы массива. Массив состоит из целых чисел.
+
+# n = int(input())
+# list_1 = [randint(1, 10) for item in range(1, n+1)]
+# res_list = []
+# print(list_1)
+# for i in range(len(list_1)):
+#     if i == 0:
+#         continue
+#     elif  list_1[i+1]<list_1[i] > list_1[i-1] :
+#         res_list.append(list_1[i])
+#     elif i == len(list_1)-2:
+#         break
+# print(len(res_list))
+
+
+
+# Дан список чисел. Посчитайте, сколько в нем пар элементов, равных друг другу.
+# Считается, что любые два элемента, равные друг другу образуют одну пару, которую необходимо посчитать.
+# Вводится список чисел. Все числа списка находятся на разных строках.
+
+# n = int(input())
+# list_1 = [randint(1, 10) for item in range(1, n+1)]
+# res = 0
+# count = 0
+# print(list_1)
+# for i in list_1:
+#     count = list_1.count(i)
+#     if count > 1:
+#         res += count//2
+#     count = 0
+# print(res//2)
+# print(list_1)
+# for i in set(list_1):
+#     count+=list_1.count(i)//2
+# print(count)
+
+
+# Два различных натуральных числа n и m называются дружественными, если сумма делителей числа n
+# (включая 1, но исключая само n) равна числу m и наоборот. Например, 220 и 284 – дружественные числа.
+# По данному числу k выведите все пары дружественных чисел, каждое из которых не превосходит k. Программа
+# получает на вход одно натуральное число k, не превосходящее 105. Программа должна вывести
+# все пары дружественных чисел, каждое из которых не превосходит k. Пары необходимо выводить по одной
+# в строке, разделяя пробелами. Каждая пара должна быть выведена только один раз (перестановка чисел новую пару не дает).
+
+# def sum_devs(n: int):
+#     count = 0
+#     for i in range(1, n // 2 + 1):
+#         if n % i == 0:
+#             count += i
+#     return count
+#
+#
+# digit_dict = {i: sum_devs(i) for i in range(1, 10000)}
+#
+# for digit, summ_ in digit_dict.items():
+#     if digit == digit_dict.get(summ_) and digit<summ_:
+#         print(digit, summ_)
