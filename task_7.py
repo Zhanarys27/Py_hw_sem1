@@ -8,5 +8,5 @@ list_1 = [randint(-10, 15) for item in range(1, 15)]
 min = int(input())
 max = int(input())
 print(list_1)
-print(lst:= [i for i in range(len(list_1)) if i> min and i< max])
+print(lst:= [i for i in range(0, len(list_1)) if list_1[i] >= min and list_1[i]<= max])
 
